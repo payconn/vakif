@@ -28,6 +28,7 @@ class PurchaseRequest extends AbstractRequest
         $body->addChild('Pan', $model->getCreditCard()->getNumber());
         $body->addChild('Cvv', $model->getCreditCard()->getCvv());
         $body->addChild('Expiry', $model->getCreditCard()->getExpireYear().$model->getCreditCard()->getExpireMonth());
+        $body->addChild('NumberOfInstallments', (string) $model->getInstallment());
         $body->addChild('ClientIp', '127.0.0.1');
         $body->addChild('TransactionDeviceSource', '0');
 
