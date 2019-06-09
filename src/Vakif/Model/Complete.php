@@ -23,7 +23,7 @@ class Complete extends AbstractModel implements CompleteInterface
     public function getExpireDate(): \DateTime
     {
         $expire = \DateTime::createFromFormat('ym', $this->getReturnParams()->get('Expiry'));
-        if(!$expire){
+        if (!$expire) {
             $expire = new \DateTime();
         }
 
