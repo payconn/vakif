@@ -14,6 +14,7 @@ use Payconn\Vakif\Request\AuthorizeRequest;
 use Payconn\Vakif\Request\CancelRequest;
 use Payconn\Vakif\Request\CompleteRequest;
 use Payconn\Vakif\Request\PurchaseRequest;
+use Payconn\Vakif\Request\RefundRequest;
 
 class Vakif extends AbstractGateway
 {
@@ -39,9 +40,9 @@ class Vakif extends AbstractGateway
         return $this->createRequest(PurchaseRequest::class, $purchase);
     }
 
-    public function refund(RefundInterface $model): ResponseInterface
+    public function refund(RefundInterface $refund): ResponseInterface
     {
-        // TODO: Implement refund() method.
+        return $this->createRequest(RefundRequest::class, $refund);
     }
 
     public function cancel(CancelInterface $cancel): ResponseInterface
