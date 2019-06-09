@@ -29,7 +29,7 @@ class CompleteRequest extends AbstractRequest
         $body->addChild('CurrencyCode', $model->getReturnParams()->get('PurchCurrency'));
         $body->addChild('Pan', $model->getReturnParams()->get('Pan'));
         $body->addChild('Expiry', (\DateTime::createFromFormat('ym', $model->getReturnParams()->get('Expiry')))->format('Ym'));
-        $body->addChild('ClientIp', $this->getIpAddress());
+        $body->addChild('ClientIp', (string)$this->getIpAddress());
         $body->addChild('ECI', $model->getReturnParams()->get('Eci'));
         $body->addChild('CAVV', $model->getReturnParams()->get('Cavv'));
         $body->addChild('MpiTransactionId', $model->getReturnParams()->get('VerifyEnrollmentRequestId'));
