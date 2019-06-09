@@ -24,7 +24,7 @@ class RefundRequest extends AbstractRequest
         $body->addChild('Password', $token->getPassword());
         $body->addChild('TerminalNo', $token->getTerminalId());
         $body->addChild('ReferenceTransactionId', $model->getOrderId());
-        $body->addChild('CurrencyAmount', $model->getAmount());
+        $body->addChild('CurrencyAmount', (string) $model->getAmount());
         $body->addChild('ClientIp', (string) $this->getIpAddress());
 
         /** @var HttpClient $httpClient */
