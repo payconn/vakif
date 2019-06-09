@@ -10,6 +10,8 @@ use Payconn\Common\Model\CompleteInterface;
 use Payconn\Common\Model\PurchaseInterface;
 use Payconn\Common\Model\RefundInterface;
 use Payconn\Common\ResponseInterface;
+use Payconn\Vakif\Request\AuthorizeRequest;
+use Payconn\Vakif\Request\CompleteRequest;
 use Payconn\Vakif\Request\PurchaseRequest;
 
 class Vakif extends AbstractGateway
@@ -21,14 +23,14 @@ class Vakif extends AbstractGateway
             ->setTestUrls('https://onlineodemetest.vakifbank.com.tr:4443/VposService/v3/Vposreq.aspx', 'https://3dsecuretest.vakifbank.com.tr:4443/MPIAPI/MPI_Enrollment.aspx'));
     }
 
-    public function authorize(AuthorizeInterface $model): ResponseInterface
+    public function authorize(AuthorizeInterface $authorize): ResponseInterface
     {
-        // TODO: Implement authorize() method.
+        return $this->createRequest(AuthorizeRequest::class, $authorize);
     }
 
-    public function complete(CompleteInterface $model): ResponseInterface
+    public function complete(CompleteInterface $complete): ResponseInterface
     {
-        // TODO: Implement complete() method.
+        return $this->createRequest(CompleteRequest::class, $complete);
     }
 
     public function purchase(PurchaseInterface $purchase): ResponseInterface
