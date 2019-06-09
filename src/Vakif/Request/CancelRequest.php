@@ -24,7 +24,7 @@ class CancelRequest extends AbstractRequest
         $body->addChild('Password', $token->getPassword());
         $body->addChild('TerminalNo', $token->getTerminalId());
         $body->addChild('ReferenceTransactionId', $model->getOrderId());
-        $body->addChild('ClientIp', '127.0.0.1');
+        $body->addChild('ClientIp', $this->getIpAddress());
 
         /** @var HttpClient $httpClient */
         $httpClient = $this->getHttpClient();
