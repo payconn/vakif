@@ -19,4 +19,9 @@ class Complete extends AbstractModel implements CompleteInterface
     {
         $this->returnParams = new ParameterBag($returnParams);
     }
+
+    public function getExpireDate(): string
+    {
+        return (\DateTime::createFromFormat('ym', $this->getReturnParams()->get('Expiry')))->format('Ym');
+    }
 }
