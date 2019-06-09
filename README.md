@@ -1,18 +1,19 @@
-# Garanti
+# Vakıf
 
-**Garanti (GVP) gateway for Payconn payment processing library**
+**Vakif (Vpos724) gateway for Payconn payment processing library**
 
-[![Build Status](https://travis-ci.com/payconn/garanti.svg?branch=master)](https://travis-ci.com/payconn/garanti)
+[![Build Status](https://travis-ci.com/payconn/vakif.svg?branch=master)](https://travis-ci.com/payconn/vakif)
 
 [Payconn](https://github.com/payconn/common) is a framework agnostic, multi-gateway payment
 processing library for PHP. This package implements common classes required by Payconn.
 
 ## Installation
 
-    composer require payconn/garanti:~1.0.1
+    composer require payconn/vakif:~1.0.0
 
 ## Supported banks
-* Garanti
+* Vakıf
+* Yapı Kredi 
 
 ## Supported methods
 * purchase
@@ -24,21 +25,19 @@ processing library for PHP. This package implements common classes required by P
 ## Basic Usage
 ```php
 use Payconn\Common\CreditCard;
-use Payconn\Garanti;
-use Payconn\Garanti\Currency;
-use Payconn\Garanti\Model\Purchase;
-use Payconn\Garanti\Token;
+use Payconn\Vakif\Token;
+use Payconn\Vakif\Model\Purchase;
+use Payconn\Vakif\Currency;
+use Payconn\Vakif;
 
-$token = new Token('30691297', '7000679', '123qweASD/');
-$creditCard = new CreditCard('4824894728063019', '23', '07', '172');
+$token = new Token('000100000013506', 'VP000579', '123456');
 $purchase = new Purchase();
 $purchase->setTestMode(true);
-$purchase->setCreditCard($creditCard);
 $purchase->setCurrency(Currency::TRY);
 $purchase->setAmount(100);
 $purchase->setInstallment(1);
-$purchase->setOrderId('ORDER_12345');
-$response = (new Garanti($token))->purchase($purchase);
+$purchase->setCreditCard(new CreditCard('4289450189088488', '2023', '04', '060'));
+$response = (new Vakif($token))->purchase($purchase);
 if($response->isSuccessful()){
     // success!
 }
@@ -53,7 +52,7 @@ Please see [UPGRADE](UPGRADE.md) for more information on how to upgrade to the l
 If you are having general issues with Payconn, we suggest posting on
 [Stack Overflow](http://stackoverflow.com/). Be sure to add the
 
-If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/payconn/garanti/issues),
+If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/payconn/vakif/issues),
 or better yet, fork the library and submit a pull request.
 
 

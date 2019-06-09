@@ -21,7 +21,7 @@ class Vakif extends AbstractGateway
     public function initialize(): void
     {
         $this->setBaseUrl((new BaseUrl())
-            ->setProdUrls('', '')
+            ->setProdUrls('https://onlineodeme.vakifbank.com.tr:4443/VposService/v3/Vposreq.aspx', 'https://3dsecure.vakifbank.com.tr:4443/MPIAPI/MPI_Enrollment.aspx')
             ->setTestUrls('https://onlineodemetest.vakifbank.com.tr:4443/VposService/v3/Vposreq.aspx', 'https://3dsecuretest.vakifbank.com.tr:4443/MPIAPI/MPI_Enrollment.aspx'));
     }
 

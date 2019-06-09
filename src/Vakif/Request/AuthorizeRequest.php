@@ -26,7 +26,7 @@ class AuthorizeRequest extends AbstractRequest
                 'MerchantPassword' => $token->getPassword(),
                 'VerifyEnrollmentRequestId' => $model->getOrderId(),
                 'Pan' => $model->getCreditCard()->getNumber(),
-                'ExpiryDate' => $model->getCreditCard()->getExpireYear()->format('Y').$model->getCreditCard()->getExpireMonth()->format('m'),
+                'ExpiryDate' => $model->getCreditCard()->getExpireYear()->format('y').$model->getCreditCard()->getExpireMonth()->format('m'),
                 'PurchaseAmount' => $model->getAmount(),
                 'Currency' => $model->getCurrency(),
                 'BrandName' => $model->getCardBrand(),
