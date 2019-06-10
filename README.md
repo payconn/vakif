@@ -1,4 +1,4 @@
-# Vakıf
+# Payconn: Vakıf (Vpos724)
 
 **Vakif (Vpos724) gateway for Payconn payment processing library**
 
