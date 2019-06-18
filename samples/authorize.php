@@ -11,8 +11,8 @@ $authorize->setInstallment(3);
 $authorize->setCreditCard(new \Payconn\Common\CreditCard('4289450189088488', '2023', '04', '060'));
 $authorize->setSuccessfulUrl('http://127.0.0.1:8000/successful');
 $authorize->setFailureUrl('http://127.0.0.1:8000/failure');
-$authorize->setOrderId('ORDER'.time());
 $authorize->setCardBrand('100');
+$authorize->generateOrderId();
 $response = (new \Payconn\Vakif($token))->authorize($authorize);
 print_r([
     'isSuccessful' => (int) $response->isSuccessful(),

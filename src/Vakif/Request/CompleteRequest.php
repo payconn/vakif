@@ -28,7 +28,7 @@ class CompleteRequest extends AbstractRequest
         $body->addChild('CurrencyAmount', $model->getReturnParams()->get('SessionInfo'));
         $body->addChild('CurrencyCode', $model->getReturnParams()->get('PurchCurrency'));
         $body->addChild('Pan', $model->getReturnParams()->get('Pan'));
-        $body->addChild('Expiry', $model->getExpireDate()->format('Ym'));
+        $body->addChild('Expiry', $model->getExpireDate());
         $body->addChild('ClientIp', (string) $this->getIpAddress());
         $body->addChild('ECI', $model->getReturnParams()->get('Eci'));
         $body->addChild('CAVV', $model->getReturnParams()->get('Cavv'));
