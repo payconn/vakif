@@ -9,7 +9,7 @@ processing library for PHP. This package implements common classes required by P
 
 ## Installation
 
-    $ composer require payconn/vakif:~1.0.1
+    $ composer require payconn/vakif
 
 ## Supported banks
 * Vakıf
