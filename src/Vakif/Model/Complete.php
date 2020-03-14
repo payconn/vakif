@@ -8,7 +8,15 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 class Complete extends AbstractModel implements CompleteInterface
 {
+    /**
+     * @var ParameterBag
+     */
     protected $returnParams;
+
+    public function __construct()
+    {
+        $this->returnParams = new ParameterBag();
+    }
 
     public function getReturnParams(): ParameterBag
     {
