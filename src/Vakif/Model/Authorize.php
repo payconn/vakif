@@ -20,14 +20,17 @@ class Authorize extends AbstractModel implements AuthorizeInterface
     use ReturnUrl;
     use OrderId;
 
+    /**
+     * @var string|null
+     */
     protected $cardBrand;
 
-    public function getCardBrand(): string
+    public function getCardBrand(): ?string
     {
         return $this->cardBrand;
     }
 
-    public function setCardBrand(string $cardBrand): void
+    public function setCardBrand(?string $cardBrand): void
     {
         $this->cardBrand = $cardBrand;
     }
