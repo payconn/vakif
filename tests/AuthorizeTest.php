@@ -52,7 +52,7 @@ class AuthorizeTest extends TestCase
         $authorize->setCardBrand('100');
         $response = (new \Payconn\Vakif($token, $client))->authorize($authorize);
         $this->assertTrue($response->isSuccessful());
-        $this->assertStringContainsString('2b8dFf97Uf2YU1oU=', $response->getRedirectForm());
-        $this->assertStringContainsString('https://dropit.3dsecure.net:9443/PIT/ACS', $response->getRedirectForm());
+        $this->assertContains('2b8dFf97Uf2YU1oU=', $response->getRedirectForm());
+        $this->assertContains('https://dropit.3dsecure.net:9443/PIT/ACS', $response->getRedirectForm());
     }
 }

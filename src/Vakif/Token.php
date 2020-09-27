@@ -6,11 +6,11 @@ use Payconn\Common\TokenInterface;
 
 class Token implements TokenInterface
 {
-    private string $merchantId;
+    private $merchantId;
 
-    private string $terminalId;
+    private $terminalId;
 
-    private string $password;
+    private $password;
 
     public function __construct(string $merchantId, string $terminalId, string $password)
     {
